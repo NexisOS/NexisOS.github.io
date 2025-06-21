@@ -1,0 +1,274 @@
+/*
+  style
+  Descript:
+  css for NexisOS
+
+  File name:     style.css
+  Maintainer:    Kyle Gortych
+  Created:       06/20/2025
+  Last Modified: 06/20/2025
+ */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Simple responsive styling */
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #222;
+}
+
+header {
+  background: #2c3e50;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #2980b9;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #ecf0f1;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/*
+@font-face {
+  font-family: shure;
+  src: url("../fonts/Shure Tech Mono Nerd Font Complete Mono Windows Compatible.ttf");
+}
+
+@font-face {
+  font-family: enix;
+  src: url("../fonts/Enixe.ttf");
+}
+
+:root {
+  --nav-primary: rgba(60, 60, 60, 0.7);
+  --nav-sceondary: rgba(240, 240, 240, 0.7);
+  --nav-aria: #1e90ff;
+  --hero-primary: rgba(0,0,0,0.5);
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: shure;
+  background-color: white;
+  overscroll-behavior-y: none;
+}
+
+main {
+    position: relative;
+    animation: slide;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyFrames slide {
+    from {left -1000px; top: 0px; opacity: 0;}
+    to {left 0px; top: 0px; opacity: 1;}
+}
+
+.hero-image {
+  background: linear-gradient(var(--hero-primary), var(--hero-primary)), url("../img/hero.webp");
+  height: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  inset: 70% 0 0 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font: 3rem enix;
+  text-shadow: 4px 4px black;
+}
+
+nav {
+  background-color: var(--nav-primary);
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  display: none;
+}
+
+nav a[aria-current="page"] {
+  border-bottom: 3px solid var(--nav-aria);
+}
+
+nav li {
+  list-style: none;
+  padding: 10px;
+}
+
+nav a {
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  text-shadow: 2px 2px black;
+  transition: 1s;
+}
+
+nav a:hover,
+nav a:focus {
+  color: black;
+  text-shadow: 2px 2px white;
+}
+
+.nav-menu {
+    background-color: var(--nav-primary);
+    text-align: center;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    width: 100%;
+    transition: top 1s;
+}
+
+.nav-menu img {
+    display: block;
+    margin: 30px 0px 50px 15px;
+    width: 70px;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    margin-right: 1.5em;
+}
+
+span {
+    font-size: 50px;
+    color: white;
+    transition: 1s;
+}
+
+span:hover {
+    border-radius: 4px;
+    background: gray;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle:checked ~ nav {
+    display: block;
+}
+
+section {
+  padding: 0 150px 0 25px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--nav-aria);
+    text-shadow: 1px 1px black;
+    transition: 1s;
+}
+
+a:hover {
+    color: black;
+    text-shadow: 1px 1px var(--nav-aria);
+}
+
+footer {
+  background: #ccc url("../img/user-icon.webp") no-repeat left center;
+  padding: 25px;
+}
+
+footer :is(h2,p,a) {
+  padding-left: 170px;
+}
+
+@media (min-width: 50em) {
+    nav {
+        top: 30px;
+        background: none;
+        display: block;
+    }
+
+    nav li {
+        display: inline;
+    }
+
+    nav a {
+        font-size: 1.7rem;
+        padding:  0.1em;
+    }
+
+    nav h1 {
+        text-align: left;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+*/
